@@ -1,0 +1,8 @@
+<%= form_for @challenge do |f| %>
+<%=  f.error_messages %>
+<%= f.label :title %>
+<%=  f.text_field :title %>
+<%=  f.label :content %>
+<%=  f.text_area :content %>
+<%=  f.submit "Create Challenge!" %>
+<% end %>

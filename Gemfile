@@ -7,7 +7,8 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem "dynamic_form"
-
+gem 'markup'
+gem 'redcarpet'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(cookies[:id]) if cookies[:id]
   end
 
+
+
   helper_method :current_user
-  
+
 end

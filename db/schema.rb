@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130405180523) do
+ActiveRecord::Schema.define(:version => 20130405203929) do
 
   create_table "attempts", :force => true do |t|
     t.integer  "user_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130405180523) do
     t.string   "github_url"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "status"
   end
 
   add_index "attempts", ["challenge_id"], :name => "index_attempts_on_challenge_id"
