@@ -20,7 +20,6 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     @markdown = MARKDOWN.render(@challenge.content)
-    # @attempts = @challenge.attempts
   end
 
   def destroy

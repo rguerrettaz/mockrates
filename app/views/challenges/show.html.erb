@@ -1,5 +1,6 @@
 <h1><%= @challenge.title %></h1>
 <%= button_to "Start Challenge", { action: "create", :id => @challenge.id, :controller=> "attempts" }  %>
+<% end %>
 <%= @markdown.html_safe %>
 
 
