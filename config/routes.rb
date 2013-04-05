@@ -1,10 +1,13 @@
 Mockrates::Application.routes.draw do
 
+  get "github_sessions/new"
   root to: 'sessions#new'
   resources :users
   resources :challenges
   resources :sessions
   resources :attempts
+  match 'auth/github/callback', to: 'github_sessions#create'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

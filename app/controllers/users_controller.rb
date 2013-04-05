@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in(@user)
-      redirect_to @user
+      session[:user_id] = @user.id
+      redirect_to github_sessions_new
     else
       render :new
     end 
