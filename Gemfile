@@ -9,6 +9,9 @@ gem 'sqlite3'
 gem "dynamic_form"
 gem 'markup'
 gem 'redcarpet'
+gem 'omniauth-github'
+gem 'github_api'
+gem 'omniauth-oauth2'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -28,6 +31,7 @@ group :development, :test do
   gem 'guard-ruby'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'debugger'
 end
 
 gem 'jquery-rails'
