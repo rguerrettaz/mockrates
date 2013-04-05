@@ -1,0 +1,9 @@
+
+
+<%= form_for  :session, :url => sessions_path, :html => {:class => "sessions"}  do |f| %>
+<%= f.label :email %>:
+<%= f.email_field :email  %>
+<%= f.label :password %>:
+<%= f.password_field :password  %>
+<%= f.submit "Log in!" %>
+<% end %>

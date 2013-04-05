@@ -1,0 +1,14 @@
+<div id="user_nav">
+  <% if current_user %>
+     <%= link_to('Home', root_url) %>  |  <%= link_to(current_user.username, user_path(current_user)) %>  |  
+    <%= link_to "Log out", session_path(current_user), :method => :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_path %> or
+    <%= link_to "Log in", new_session_path %>
+  <% end %>
+</div>
+
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>

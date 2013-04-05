@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem "dynamic_form"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,7 +20,17 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'spork'
+  gem 'guard-ruby'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
+
 gem 'jquery-rails'
+gem 'bcrypt-ruby'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
