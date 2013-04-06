@@ -1,0 +1,4 @@
+$("#attempt-submitted").remove();
+$(".button_to input:first").attr("disabled", "disabled");
+$(".start-button").append("<%= j render :partial => 'attempts/submit_button', :locals => { :attempt => @attempt } %>");  
+

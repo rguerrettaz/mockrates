@@ -7,15 +7,14 @@ require 'debugger'
     @attempt = Attempt.new(challenge_id: params[:id])
     @attempt.user = current_user
     @attempt.github_url = gist.html_url
-    @attempt.save  
-    redirect_to :back
+    @attempt.save     
   end
 
   def update
-    @attempt = Attempt.find(params[:attempt][:id])
-    @attempt.update_attributes params[:attempt]
-    @attempt.update(status: 'submitted', github_url: params[:attempt][:url])
-    redirect_to :back
+    p "$$$$$$$$$$$$ this is your params: #{params}"
+    @attempt = Attempt.find(params[:id])
+    @attempt.update_attributes(params[:attempt])
+    @attempt.update_attributes(status: 'submitted')
   end
 
 end

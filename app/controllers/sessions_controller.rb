@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    
     cookies.delete(:id)
     redirect_to root_url
   end

@@ -1,7 +1,7 @@
 <h1><%= @challenge.title %></h1>
-
-<%= button_to "Start Challenge", { action: "create", :id => @challenge.id, :controller=> "attempts" } %>
-
+<div class = 'start-button'>
+<%= button_to "Start Challenge", { action: "create", :id => @challenge.id, :controller=> "attempts"}, :remote => true %>
+</div>
 <%= @markdown.html_safe %>
 
 
