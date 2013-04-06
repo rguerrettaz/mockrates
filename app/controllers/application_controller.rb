@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def second_current_user
-    @second_current_user ||= User.find(cookies[:id2]) if cookies[:id2]
+  def current_user_2
+    @current_user_2 ||= User.find(cookies[:id2]) if cookies[:id2]
   end
 
   def current_user
@@ -18,14 +18,14 @@ class ApplicationController < ActionController::Base
   end
 
   def pair_users?
-    second_current_user && current_user
+    current_user_2 && current_user
   end
   def active_user
-    @active_user = current_user || second_current_user
+    @active_user = current_user || current_user_2
   end
 
 
 
-  helper_method :current_user, :second_current_user, :pair_users?, :active_user
+  helper_method :current_user, :current_user_2, :pair_users?, :active_user
 
 end

@@ -2,7 +2,7 @@
   <% if pair_users? %>
     <%= link_to('Home', root_url) %>  |  
     <%= link_to "Log out #{current_user.username}", session_path(current_user), :method => :delete %> |
-    <%= link_to "Log out #{second_current_user.username}", session_path(second_current_user), :method => :delete %> |
+    <%= link_to "Log out #{current_user_2.username}", session_path(current_user_2), :method => :delete %> |
     <%= link_to "Challenges", challenges_path %> |
     <%= link_to "Create Challenge", new_challenge_path %>
 
