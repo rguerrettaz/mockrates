@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130406204628) do
-=======
 ActiveRecord::Schema.define(:version => 20130406210404) do
->>>>>>> phase, week and cohort models and migrations
 
   create_table "attempts", :force => true do |t|
     t.integer  "user_id"
@@ -45,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20130406210404) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "cohorts", ["user_id"], :name => "index_cohorts_on_user_id"
 
   create_table "phases", :force => true do |t|
     t.string   "name"

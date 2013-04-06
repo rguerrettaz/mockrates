@@ -1,4 +1,7 @@
 class ChallengesController < ApplicationController
+  before_filter :signed_in_user, only: [:show, :index]
+  # before_filter :current_user,   only: [:show, :index]
+  before_filter :admin_user, only: [:new]
 
   def new
     @challenge = Challenge.new

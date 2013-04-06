@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :login_required
+  
   def sign_in(user)
     if cookies[:id]
       cookies[:id2] = user.id
@@ -26,16 +28,23 @@ class ApplicationController < ActionController::Base
   end
 
    def admin_user
-    redirect_to(root_path) unless current_user.admin?
+    if current_user_2
+      redirect_to current_user_2 unless current_user_2.admin
+    end
+    if current_user
+      redirect_to current_user unless current_use.admin
+    end
+  end
+
+  def login_required
+    unless cookies[:id] || cookies[:id_2]
+      flash[:notice] = "Must be logged in to access that page"
+      redirect_to root_path
+    end
   end
 
   def signed_in_user
     redirect_to signin_url, notice: "please sign in." unless cookies[:id] || cookies[:id_2]
-  end
-
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_path) unless current_user?(@user)
   end
 
   def active_user

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   require 'debugger'
+  before_filter :login_required, :except => [:new, :create]
   def new
     render :new, :layout => false
   end
@@ -11,8 +12,8 @@ class SessionsController < ApplicationController
       sign_in(@user)
       redirect_to @user
     else
-      flash.now.alert = "Invalid email or password"
-      render 'new'   
+      flash[:notice] = "Invalid email or password"
+      redirect_to :back   
     end
   end
 

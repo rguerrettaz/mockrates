@@ -9,6 +9,7 @@
 <body>
   <div class="landing-wrapper">
     <div class="hero-unit">
+      <p style="color:red; font-size:15px;"><%= flash[:notice] if flash[:notice] %>
       <h1>Welcome to Mockrates</h1>
       <%= image_tag("mockrates.png", id: "mockrates-img") %>
       <%= form_for  :session, :url => sessions_path, :html => {:class => "login-form"}  do |f| %>
