@@ -33,7 +33,7 @@ class ChallengesController < ApplicationController
                                interactive: params[:challenge][:interactive])
     if @challenge.save
     create_specs(params[:challenge][:specs_attributes]["0"][:content], @challenge.id) if params[:challenge][:specs_attributes]["0"][:content]
-    redirect_to @challenge
+    redirect_to challenges_path
     else
       render :new
     end
