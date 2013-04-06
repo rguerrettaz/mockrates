@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130406204628) do
+=======
+ActiveRecord::Schema.define(:version => 20130406210404) do
+>>>>>>> phase, week and cohort models and migrations
 
   create_table "attempts", :force => true do |t|
     t.integer  "user_id"
@@ -30,6 +34,26 @@ ActiveRecord::Schema.define(:version => 20130406204628) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "week_id"
+  end
+
+  create_table "cohorts", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "start_date"
+    t.string   "picture"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "phases", :force => true do |t|
+    t.string   "name"
+    t.integer  "week_id"
+    t.integer  "phase_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -41,9 +65,20 @@ ActiveRecord::Schema.define(:version => 20130406204628) do
     t.string   "oauth_token"
     t.string   "uid"
     t.boolean  "admin",           :default => false
+    t.integer  "cohort_id"
   end
 
   add_index "users", ["oauth_token"], :name => "index_users_on_oauth_token"
   add_index "users", ["uid"], :name => "index_users_on_uid"
+
+  create_table "weeks", :force => true do |t|
+    t.integer  "week_number"
+    t.integer  "phase_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "challenge_id"
+  end
 
 end
