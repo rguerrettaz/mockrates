@@ -13,6 +13,7 @@ gem 'omniauth-github'
 gem 'github_api'
 gem 'omniauth-oauth2'
 gem 'pg'
+gem 'rubycop'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

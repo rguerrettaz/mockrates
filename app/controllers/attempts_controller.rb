@@ -1,5 +1,8 @@
+
+
+
 class AttemptsController < ApplicationController
-require 'debugger'
+
   def create
     @challenge = Challenge.find(params[:id])
     @github = Github.new oauth_token: current_user.oauth_token, client_id: ENV['GITHUB_KEY'], client_secret: ENV['GITHUB_SECRET']
@@ -11,11 +14,11 @@ require 'debugger'
   end
 
   def update
-    p "$$$$$$$$$$$$ this is your params: #{params}"
     @attempt = Attempt.find(params[:id])
     @attempt.update_attributes(params[:attempt])
     @attempt.update_attributes(status: 'submitted')
   end
+
 
 end
 

@@ -5,4 +5,6 @@ require File.expand_path('../application', __FILE__)
 Mockrates::Application.initialize!
 
 MARKDOWN = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+require 'ruby_cop'
+require 'debugger'
 

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+
  def sign_in(user)
     if cookies[:id]
       cookies[:id2] = user.id
@@ -24,7 +25,12 @@ class ApplicationController < ActionController::Base
     @active_user = current_user || second_current_user
   end
 
-
+  def create_specs(content, challenge_id)
+    specs = content.split("\r\n")
+    specs.each do |spec|
+      Spec.create(content: spec, challenge_id: challenge_id)
+    end
+  end
 
   helper_method :current_user, :second_current_user, :pair_users?, :active_user
 
