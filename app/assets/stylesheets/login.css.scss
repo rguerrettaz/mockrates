@@ -1,12 +1,14 @@
 @import "bootstrap";
 
+.landing-html {
+  background: url(/assets/black_linen_v2.png); 
+}
 .landing-wrapper {
   padding-top: 30px;
   background-image: url(/assets/black_linen_v2.png);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0px auto;
-  height: 100%;
-  height: 700px;
+  min-height: 100%;
 }
 
 #mockrates-img {
