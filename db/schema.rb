@@ -11,7 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20130406220946) do
 
   create_table "attempts", :force => true do |t|
@@ -32,15 +31,8 @@ ActiveRecord::Schema.define(:version => 20130406220946) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
     t.boolean  "interactive", :default => false
+    t.integer  "week_id"
   end
-
-  create_table "specs", :force => true do |t|
-    t.string   "content"
-    t.integer  "challenge_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
 
   create_table "cohorts", :force => true do |t|
     t.string   "name"
@@ -61,7 +53,20 @@ ActiveRecord::Schema.define(:version => 20130406220946) do
     t.datetime "end_date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
 
+  create_table "specs", :force => true do |t|
+    t.string   "content"
+    t.integer  "challenge_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "tests", :force => true do |t|
+    t.string   "content"
+    t.integer  "challenge_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -72,8 +77,8 @@ ActiveRecord::Schema.define(:version => 20130406220946) do
     t.datetime "updated_at",                         :null => false
     t.string   "oauth_token"
     t.string   "uid"
-    t.boolean  "admin",           :default => false
     t.integer  "cohort_id"
+    t.boolean  "admin",           :default => false
   end
 
   add_index "users", ["oauth_token"], :name => "index_users_on_oauth_token"

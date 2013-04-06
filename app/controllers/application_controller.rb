@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
- def sign_in(user)
-
   before_filter :login_required
+  
+  def sign_in(user)
     if cookies[:id]
       cookies[:id2] = user.id
     else
@@ -32,7 +31,7 @@ class ApplicationController < ActionController::Base
       redirect_to current_user_2 unless current_user_2.admin
     end
     if current_user
-      redirect_to current_user unless current_use.admin
+      redirect_to current_user unless current_user.admin
     end
   end
 
