@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password_digest, :username, :password
+  attr_accessible :email, :password_digest, :username, :password, :cohort_id
   has_secure_password
+  belongs_to :cohort  
   has_many :attempts
   has_many :challenges, :through => :attempts
 

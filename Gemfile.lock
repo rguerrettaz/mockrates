@@ -30,6 +30,8 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.3.1.0)
+      sass (~> 3.2)
     builder (3.0.4)
     capybara (2.0.3)
       mime-types (>= 1.16)
@@ -123,7 +125,7 @@ GEM
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
-    pg (0.14.1)
+    pg (0.15.0)
     polyglot (0.3.3)
     pry (0.9.12)
       coderay (~> 1.0.5)
@@ -205,6 +207,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby
+  bootstrap-sass
   capybara
   coffee-rails (~> 3.2.1)
   database_cleaner

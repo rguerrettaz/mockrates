@@ -4,4 +4,6 @@ class Challenge < ActiveRecord::Base
   has_many :users, :through => :attempts
   has_many :specs
   accepts_nested_attributes_for :specs
+  belongs_to :week
+
 end

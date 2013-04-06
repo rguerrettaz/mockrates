@@ -1,3 +1,4 @@
+
   module Interactive
     require 'ruby_cop'
     require 'rspec/autorun'
@@ -17,10 +18,12 @@
     end
   end
 
-
 class ChallengesController < ApplicationController
+  before_filter :signed_in_user, only: [:show, :index]
+  before_filter :admin_user, only: [:new]
   include Interactive
-def new
+  
+  def new
     @challenge = Challenge.new
   end
 
@@ -36,16 +39,18 @@ def new
     end
   end
 
-  def index
-    @challenges = Challenge.all
-  end
-
   def show
     @challenge = Challenge.find(params[:id])
     redirect_to challenges_interactive_path if @challenge.interactive
     @markdown = MARKDOWN.render(@challenge.content)
   end
 
+
+  def index
+    @challenges = Challenge.all
+  end
+
+  
   def destroy
   end
 

@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20130406220946) do
 
   create_table "attempts", :force => true do |t|
@@ -40,24 +41,52 @@ ActiveRecord::Schema.define(:version => 20130406220946) do
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "tests", :force => true do |t|
-    t.string   "content"
-    t.integer  "challenge_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+
+  create_table "cohorts", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "start_date"
+    t.string   "picture"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "cohorts", ["user_id"], :name => "index_cohorts_on_user_id"
+
+  create_table "phases", :force => true do |t|
+    t.string   "name"
+    t.integer  "week_id"
+    t.integer  "phase_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+
   end
 
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "password_digest"
     t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "oauth_token"
     t.string   "uid"
+    t.boolean  "admin",           :default => false
+    t.integer  "cohort_id"
   end
 
   add_index "users", ["oauth_token"], :name => "index_users_on_oauth_token"
   add_index "users", ["uid"], :name => "index_users_on_uid"
+
+  create_table "weeks", :force => true do |t|
+    t.integer  "week_number"
+    t.integer  "phase_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "challenge_id"
+  end
 
 end
