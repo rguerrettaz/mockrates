@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   require 'debugger'
   def new
+    render :new, :layout => false
   end
 
   def create

@@ -1,9 +1,25 @@
-
-
-<%= form_for  :session, :url => sessions_path, :html => {:class => "sessions"}  do |f| %>
-<%= f.label :email %>:
-<%= f.email_field :email  %>
-<%= f.label :password %>:
-<%= f.password_field :password  %>
-<%= f.submit "Log in!" %>
-<% end %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mockrates</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="landing-wrapper">
+    <div class="hero-unit">
+      <h1>Welcome to Mockrates</h1>
+      <%= image_tag("mockrates.png", id: "mockrates-img") %>
+      <%= form_for  :session, :url => sessions_path, :html => {:class => "login-form"}  do |f| %>
+      <%= f.email_field :email, placeholder: "Email"  %><br>
+      <%= f.password_field :password, placeholder: "Password"  %><br>
+      <%= f.submit "Login", class: "btn btn-primary" %>
+      <% end %>
+      <div class="pull-right">
+        <%= link_to "signup", new_user_path, class: "signup-link" %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

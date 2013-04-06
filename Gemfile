@@ -6,7 +6,8 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem "dynamic_form"
+gem 'bootstrap-sass'
+gem 'dynamic_form'
 gem 'markup'
 gem 'redcarpet'
 gem 'omniauth-github'

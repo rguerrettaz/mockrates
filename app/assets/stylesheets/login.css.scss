@@ -1,0 +1,40 @@
+@import "bootstrap";
+
+.landing-wrapper {
+  padding-top: 30px;
+  background-image: url(/assets/black_linen_v2.png);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0px auto;
+  height: 100%;
+  height: 700px;
+}
+
+#mockrates-img {
+  margin: 20px 0px 20px 156px;
+  text-align: center;
+}
+
+.login-form {
+  margin: 0 0 0 100px;
+}
+
+.signup-link{
+ font-size: 80%;
+}
+
+.hero-unit {
+  width: 420px;
+  margin: 0px auto;
+  border-radius: 6px;
+  background-color: #EEEEEE;
+  min-height: 100px;
+  padding-bottom: 50px;
+  h1 {
+    text-align: center;
+    font-size: 40px;
+  }
+  input {
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+}
