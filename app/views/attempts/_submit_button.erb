@@ -1,1 +1,7 @@
-<%= button_to "Submit Challenge", { action: "update", :id => @attempt, :controller=> "attempts" }, :method => 'put'   %>
+<%= form_for @attempt, :remote => true do |f| %>
+  <%= f.label :github_url, "You gist" %>
+  <%= f.text_field :github_url, :value => @attempt.github_url %>
+  <%= f.submit "Submit Challenge" %>
+<% end %>
+
+
