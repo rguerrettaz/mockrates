@@ -13,15 +13,17 @@ class ChallengesController < ApplicationController
     end
   end
 
-  def index
-    @challenges = Challenge.all
-  end
-
   def show
     @challenge = Challenge.find(params[:id])
     @markdown = MARKDOWN.render(@challenge.content)
   end
 
+
+  def index
+    @challenges = Challenge.all
+  end
+
+  
   def destroy
   end
 

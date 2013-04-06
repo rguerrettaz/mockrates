@@ -10,6 +10,7 @@ require 'debugger'
     @attempt.save     
     @attempt2 = Attempt.new(challenge_id: params[:id])
     @attempt2.user =  current_user_2
+    @attempt2.github_url = gist.html_url
     @attempt2.save   
   end
 

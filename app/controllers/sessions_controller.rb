@@ -27,7 +27,11 @@ class SessionsController < ApplicationController
   def destroy
     cookies.delete(:id) if params[:id] == cookies[:id]
     cookies.delete(:id2) if params[:id] == cookies[:id2]
-    redirect_to root_url
+    if active_user
+      redirect_to active_user
+    else
+      redirect_to root_url
+    end
   end
 
 

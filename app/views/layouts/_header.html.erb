@@ -1,16 +1,20 @@
 <div id="user_nav">
   <% if pair_users? %>
-    <%= link_to('Home', root_url) %>  |  
+    <%= link_to('Home', current_user) %>  |  
     <%= link_to "Log out #{current_user.username}", session_path(current_user), :method => :delete %> |
     <%= link_to "Log out #{current_user_2.username}", session_path(current_user_2), :method => :delete %> |
     <%= link_to "Challenges", challenges_path %> |
+    <% if current_user_2.admin || current_user.admin %>
     <%= link_to "Create Challenge", new_challenge_path %>
+    <% end %>
 
   <% elsif active_user %>
-    <%= link_to('Home', root_url) %>  |  
+    <%= link_to('Home', active_user) %>  |  
     <%= link_to "Log out #{active_user.username}", session_path(active_user), :method => :delete %> |
     <%= link_to "Challenges", challenges_path %> |
+    <% if active_user.admin %>
     <%= link_to "Create Challenge", new_challenge_path %>
+    <% end %>
     <%= link_to "Login another", new_session_path %>
   <% else %>
     <%= link_to "Sign up", new_user_path %> or
