@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_user
-    unless current_user_2.admin || current_user.admin
+    unless (current_user_2 && current_user_2.admin) || current_user.admin
       if current_user_2 
         redirect_to current_user_2
       else

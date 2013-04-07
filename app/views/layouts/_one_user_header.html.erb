@@ -1,0 +1,22 @@
+    <li><%= link_to('Home', active_user) %></li>
+    <li><%= link_to "Challenges", challenges_path %></li>
+    <% if active_user.admin %>
+    <li><%= link_to "Create Challenge", new_challenge_path %></li>
+    <% end %>
+    <li><a href="../sql_designer" target="_blank">SQL-Designer</a></li>
+
+
+
+ <li id="fat-menu" class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      Logged in as <%= active_user.username.capitalize%><b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li class="name"><%= active_user.username %></li>
+      <li>
+      <%= link_to "Log out", session_path(active_user), :method => :delete %>
+      </li>
+      <li class="divider"></li>
+      <li><%= link_to "Login another", new_session_path %></li>
+    </ul>
+  </li>
