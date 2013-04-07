@@ -1,3 +1,7 @@
+<% unless @user.oauth_token %>
+<%= render "github_modal" %>
+<% end %>
+
 <h1><%= @user.username %></h1>
 
 <h2>"Programming is not about what you know. 
