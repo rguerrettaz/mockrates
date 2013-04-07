@@ -5,5 +5,6 @@ class Challenge < ActiveRecord::Base
   has_many :specs
   accepts_nested_attributes_for :specs
   belongs_to :week
+  has_many :interactive_attempts
 
 end

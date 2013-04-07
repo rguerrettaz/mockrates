@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   belongs_to :cohort  
   has_many :attempts
   has_many :challenges, :through => :attempts
+  has_many :interactive_attempts
 
   EMAIL_REGEX = /^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/
 
