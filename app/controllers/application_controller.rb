@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   def sign_in(user)
     if cookies[:id]
-      cookies[:id2] = user.id
+      cookies[:id_2] = user.id
     else
       cookies[:id] = user.id
     end
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
   
   def current_user_2
-    @current_user_2 ||= User.find(cookies[:id2]) if cookies[:id2]
+    @current_user_2 ||= User.find(cookies[:id_2]) if cookies[:id_2]
   end
 
   def current_user
@@ -44,6 +44,9 @@ class ApplicationController < ActionController::Base
   end
 
   def login_required
+    p cookies[:id]
+    p cookies[:id_2]
+    puts '*' *400
     unless cookies[:id] || cookies[:id_2]
       flash[:notice] = "Must be logged in to access that page"
       redirect_to root_path

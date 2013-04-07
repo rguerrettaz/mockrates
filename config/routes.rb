@@ -10,6 +10,8 @@ Mockrates::Application.routes.draw do
   match '/test', to: 'challenges#test'
   match '/test2', to: 'challenges#test2'
   match '/challenges/:id/interactive', to: 'challenges#interactive'
+  match '/locale/en.xml', to: 'locale#en'
+  match '/db/mysql/datatypes.xml', to: 'db#datatypes'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

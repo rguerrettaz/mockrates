@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(:version => 20130407005723) do
     t.text     "content"
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
-    t.boolean  "interactive", :default => false
     t.integer  "week_id"
+    t.boolean  "interactive", :default => false
   end
 
   create_table "cohorts", :force => true do |t|
@@ -64,13 +64,6 @@ ActiveRecord::Schema.define(:version => 20130407005723) do
   end
 
   create_table "specs", :force => true do |t|
-    t.string   "content"
-    t.integer  "challenge_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  create_table "tests", :force => true do |t|
     t.string   "content"
     t.integer  "challenge_id"
     t.datetime "created_at",   :null => false
