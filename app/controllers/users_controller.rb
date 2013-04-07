@@ -24,7 +24,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    id = params[:id] || current_user.id || current_user_2.id
+    @user = User.find(id)
   end
 
   def destroy

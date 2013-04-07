@@ -46,10 +46,9 @@ class ApplicationController < ActionController::Base
   def login_required
     p cookies[:id]
     p cookies[:id_2]
-    puts '*' *400
     unless cookies[:id] || cookies[:id_2]
       flash[:notice] = "Must be logged in to access that page"
-      redirect_to root_path
+      redirect_to login_path
     end
   end
 
