@@ -6,6 +6,10 @@ Mockrates::Application.routes.draw do
   resources :challenges
   resources :sessions
   resources :attempts
+
+
+
+  
   match 'auth/:provider/callback', to: 'github_sessions#create'
   match '/test', to: 'challenges#test'
   match '/test2', to: 'challenges#test2'

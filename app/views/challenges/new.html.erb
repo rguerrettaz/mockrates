@@ -5,7 +5,8 @@
 <%=  f.text_field :title %>
 <%=  f.label :content %>
 <%=  f.text_area :content %>
-
+<%= f.label :week_id, "Week" %>
+<%=  f.collection_select :week_id, Week.all , :id, :name %>
 <%= f.label :interactive %>
 <%= f.check_box :interactive, class: "interactive" %> <br/>
   
@@ -16,6 +17,8 @@
       <%= builder.text_area :content %>
     <% end %>
   </div>
+
+
 
 <%=  f.submit "Create Challenge!" %>
 <% end %>
