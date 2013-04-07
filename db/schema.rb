@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(:version => 20130406234910) do
     t.text     "content"
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
-    t.integer  "week_id"
     t.boolean  "interactive", :default => false
+    t.integer  "week_id"
     t.integer  "phase_id"
   end
 
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(:version => 20130406234910) do
     t.datetime "updated_at",                         :null => false
     t.string   "oauth_token"
     t.string   "uid"
-    t.boolean  "admin",           :default => false
     t.integer  "cohort_id"
+    t.boolean  "admin",           :default => false
   end
 
   add_index "users", ["oauth_token"], :name => "index_users_on_oauth_token"

@@ -27,15 +27,16 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_user
-    unless current_user_2.admin || current_user.admin
-      if current_user_2 
+    if current_user_2
+      unless current_user_2.admin 
         redirect_to current_user_2
-      else
+      end
+    elsif current_user
+      unless current_user.admin
         redirect_to current_user
       end
     end
   end
-
 
   def create_specs(content, challenge_id)
     specs = content.split("\r\n")
