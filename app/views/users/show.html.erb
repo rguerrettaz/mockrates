@@ -1,9 +1,32 @@
+<div class="container">
 <% unless @user.oauth_token %>
 <%= render "github_modal" %>
 <% end %>
 
-<h1><%= @user.username %></h1>
+<div class="user">
+  <h2>Activity Feed</h2>
+  <%= image_tag gravatar_for(@user), size: 40 %>
+  <textarea placeholder="What do you want your fellow boots to know?" cols="100" rows="2"></textarea>
+  <button class="btn btn-primary">Post</button>
+</div>
+  
 
-<h2>"Programming is not about what you know. 
-It's about what you can GOOGLE." 
-~ Mockrates</h2>
+<h3 class="quote">"Programming is not about what you know.<br/>
+It's about what you can GOOGLE." <br/>
+~ Mockrates</h3>
+
+
+<section class="feed">
+  <% all_attempts.each do |attempt| %>
+    <div class="attempt">
+      <h4>CodeReview</h4>
+      <p>I just submitted an attempt for <%= link_to get_challenge(attempt).title, get_challenge(attempt)%><%= get_github(attempt) %> </p>
+      <%= image_tag gravatar_for(User.find(attempt.user_id), size: 50), class: "gravatar" %>
+    </div>
+  <% end %>
+</section>
+
+
+</div>
+
+
