@@ -30,9 +30,12 @@ class ChallengesController < ApplicationController
   end
 
   def create
+    week= Week.find(params[:challenge][:week_id])
     @challenge = Challenge.new(title: params[:challenge][:title],
                                content: params[:challenge][:content],
-                               interactive: params[:challenge][:interactive])
+                               interactive: params[:challenge][:interactive],
+                               week_id: week.id,
+                               phase_id: week.phase_id)
     if @challenge.save
     create_specs(params[:challenge][:specs_attributes]["0"][:content], @challenge.id) if params[:challenge][:specs_attributes]["0"][:content]
     redirect_to challenges_path

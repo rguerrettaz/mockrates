@@ -1,31 +1,29 @@
-<div id="user_nav">
-  <% if pair_users? %>
-    <%= link_to 'Home', root_path %>  |  
-    <%= link_to "Log out #{current_user.username}", session_path(current_user), :method => :delete %> |
-    <%= link_to "Log out #{current_user_2.username}", session_path(current_user_2), :method => :delete %> |
-    <%= link_to "Challenges", challenges_path %> |
-    <% if current_user_2.admin? || current_user.admin? %>
-    <%= link_to "Create Challenge", new_challenge_path %>|
-    <a href="sql_designer" target="_blank">SQL-Designer</a>
-    <% end %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to "Mockrates", '/', id: "logo" %>
+          <nav>
+            <ul class="nav pull-right">
+              <% if pair_users? %>
+                <%= render 'layouts/paired_user_header' %>
+              <% elsif active_user %>
+                <%= render 'layouts/one_user_header' %>
+              <% else %>
+                <li><%= link_to "Sign up", new_user_path %></li>
+                <li><%= link_to "Log in", new_session_path %></li>
+             <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+</header>
 
-  <% elsif active_user %>
-    <%= link_to('Home', active_user) %>  |  
-    <%= link_to "Log out #{active_user.username}", session_path(active_user), :method => :delete %> |
-    <%= link_to "Challenges", challenges_path %> |
-    <% if active_user.admin %>
-    <%= link_to "Create Challenge", new_challenge_path %> | 
-    <% end %>
-    <%= link_to "Login another", new_session_path %> | 
-    <a href="../sql_designer" target="_blank">SQL-Designer</a>
-  <% else %>
-    <%= link_to "Sign up", new_user_path %> or
-    <%= link_to "Log in", new_session_path %>
-  <% end %>
   
-</div>
 
 
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
+
+
+

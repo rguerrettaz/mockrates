@@ -9,4 +9,5 @@ class Challenge < ActiveRecord::Base
   has_many :interactive_attempts
   belongs_to :phase
 
+
 end

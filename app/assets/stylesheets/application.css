@@ -11,3 +11,84 @@
  *= require_self
  *= require_tree .
  */
+@import "bootstrap";
+
+h3.quote {
+  float: right;
+  font-weight: normal;
+  width: 30%;
+  font-size: 1.4em;
+  position: relative;
+  bottom: 180px;
+
+}
+
+.feed{
+  float: left;
+  width: 50%;
+}
+
+div.attempt {
+  width: 550px;
+  border-top: 1px solid #e3e3e3;
+  padding: 20px 0 0 0;
+  vertical-align: middle;
+  margin-bottom: 0px;
+}
+
+
+
+div.attempt h4, div.attempt p {
+    margin-left: 100px;
+}
+
+div.attempt img {
+  position: relative;
+  bottom: 75px;
+}
+
+div.user {
+  margin: 50px 0;
+  width: 550px;
+  padding-top: 30px;
+
+}
+
+div.user h2 {
+  padding-bottom: 20px;
+}
+
+div.user img {
+  padding-right: 50px;
+}
+ button {
+  display: block;
+  float:right;
+  position: relative;
+  /*top: 90px;*/
+  /*right: 100px;*/
+}
+
+div.user textarea {
+  width: 400px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+ ul li.name {
+  padding-left: 20px;
+  background-color: grey;
+  color: white;
+ }
