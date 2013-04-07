@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_email(params[:session][:email])
     if @user && @user.authenticate(params[:session][:password])
-      return redirect_to root_path, :notice => "You have logged in" if @user == active_user
+      return redirect_to current_user, :notice => "You have logged in" if @user == active_user
       sign_in(@user)
       redirect_to @user
     else
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
 
   def destroy
     cookies.delete(:id) if params[:id] == cookies[:id]
-    cookies.delete(:id2) if params[:id] == cookies[:id2]
+    cookies.delete(:id_2) if params[:id] == cookies[:id_2]
     if active_user
       redirect_to active_user
     else
