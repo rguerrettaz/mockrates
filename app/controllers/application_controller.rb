@@ -26,12 +26,13 @@ class ApplicationController < ActionController::Base
     user == current_user || user == current_user_2
   end
 
-   def admin_user
-    if current_user_2
-      redirect_to current_user_2 unless current_user_2.admin
-    end
-    if current_user
-      redirect_to current_user unless current_user.admin
+  def admin_user
+    unless current_user_2.admin || current_user.admin
+      if current_user_2 
+        redirect_to current_user_2
+      else
+        redirect_to current_user
+      end
     end
   end
 
