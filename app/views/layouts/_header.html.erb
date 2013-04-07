@@ -3,7 +3,7 @@
     <%= link_to('Home', current_user) %>  |  
     <%= link_to "Log out #{current_user.username}", session_path(current_user), :method => :delete %> |
     <%= link_to "Log out #{current_user_2.username}", session_path(current_user_2), :method => :delete %> |
-    <%= link_to "Challenges", challenges_path %> |
+    <%= link_to "Challenges", week_path %> |
     <% if current_user_2.admin? || current_user.admin? %>
     <%= link_to "Create Challenge", new_challenge_path %>|
     <a href="sql_designer" target="_blank">SQL-Designer</a>

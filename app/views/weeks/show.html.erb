@@ -2,9 +2,17 @@
 
 <div id="sidebar"><%= render :partial => 'weeks/index' %></div>
 <div id='main'><% @week.challenges.each do |c| %>
-  <p><%= link_to c.title, c %>, submitted:  
-    <% unless current_user.attempts.select {|a| a.challenge_id == c.id }.empty? %>
-    Yes
+  <p><%= link_to c.title, c %>,  
+    <% if current_user.attempts.select {|a| a.challenge_id == c.id }.empty? %>
+    submitted by <%= current_user.username %>? No
+    <% else %>
+    submitted by <%= current_user.username %>? Yes
+    <% end %>
+    |
+    <% if current_user_2.attempts.select {|a| a.challenge_id == c.id }.empty? %>
+    submitted by <%= current_user_2.username %>? No
+    <% else %>
+    submitted by <%= current_user_2.username %>? Yes
     <% end %>
   </p>
 <% end %></div>

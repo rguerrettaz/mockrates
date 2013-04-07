@@ -14,7 +14,6 @@
 
 ActiveRecord::Schema.define(:version => 20130407005723) do
 
-
   create_table "attempts", :force => true do |t|
     t.integer  "user_id"
     t.integer  "challenge_id"
@@ -35,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130407005723) do
     t.integer  "week_id"
     t.boolean  "interactive", :default => false
     t.integer  "phase_id"
+    t.boolean  "interactive", :default => false
   end
 
   create_table "cohorts", :force => true do |t|
