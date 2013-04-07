@@ -1,6 +1,5 @@
 class Week < ActiveRecord::Base
-  attr_accessible :week_number
-  
+  attr_accessible :name, :phase_id
   belongs_to :phase
   has_many :challenges
 end

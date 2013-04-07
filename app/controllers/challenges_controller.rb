@@ -25,6 +25,8 @@ class ChallengesController < ApplicationController
   
   def new
     @challenge = Challenge.new
+    @phases = Phase.all
+    @weeks = Week.all
   end
 
   def create

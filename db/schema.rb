@@ -11,7 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20130407005723) do
+
 
   create_table "attempts", :force => true do |t|
     t.integer  "user_id"
@@ -32,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130407005723) do
     t.datetime "updated_at",                     :null => false
     t.integer  "week_id"
     t.boolean  "interactive", :default => false
+    t.integer  "phase_id"
   end
 
   create_table "cohorts", :force => true do |t|
@@ -54,13 +57,14 @@ ActiveRecord::Schema.define(:version => 20130407005723) do
   end
 
   create_table "phases", :force => true do |t|
-    t.string   "name"
     t.integer  "week_id"
     t.integer  "phase_id"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "challenge_id"
+    t.string   "phase_number"
   end
 
   create_table "specs", :force => true do |t|
@@ -86,13 +90,13 @@ ActiveRecord::Schema.define(:version => 20130407005723) do
   add_index "users", ["uid"], :name => "index_users_on_uid"
 
   create_table "weeks", :force => true do |t|
-    t.integer  "week_number"
     t.integer  "phase_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "challenge_id"
+    t.string   "name"
   end
 
 end

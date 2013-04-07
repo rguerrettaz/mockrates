@@ -18,7 +18,7 @@
     <% end %>
   </div>
 
-
-
+<%=  f.label :week_id, "Week" %>
+<%=  f.collection_select :week_id, Week.all , :id, :name %>
 <%=  f.submit "Create Challenge!" %>
 <% end %>

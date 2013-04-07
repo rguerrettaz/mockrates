@@ -1,5 +1,6 @@
 <div class="container">
   <h1><%= @challenge.title %></h1>
+  <h2>Phase: <%= @challenge.week.phase.phase_number %>, Week: <%= @challenge.week.name %></h2>
   <div class = 'start-button'>
     <%= button_to "Start Challenge", { action: "create", :id => @challenge.id, :controller=> "attempts"}, :remote => true %>
   </div>

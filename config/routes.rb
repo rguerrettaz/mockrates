@@ -6,7 +6,7 @@ Mockrates::Application.routes.draw do
   resources :challenges
   resources :sessions
   resources :attempts
-
+  resources :weeks
 
 
   

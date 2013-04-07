@@ -1,0 +1,14 @@
+<h1><%= @week.name %></h1>
+
+<div id="sidebar"><%= render :partial => 'weeks/index' %></div>
+<div id='main'><% @week.challenges.each do |c| %>
+  <p><%= link_to c.title, c %>, submitted:  
+    <% unless current_user.attempts.select {|a| a.challenge_id == c.id }.empty? %>
+    Yes
+    <% end %>
+  </p>
+<% end %></div>
+
+
+
+
