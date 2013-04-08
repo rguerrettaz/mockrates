@@ -5,8 +5,17 @@ class WeeksController < ApplicationController
   before_filter :admin_user, only: :destroy
 
   def show
+    @challenges = Challenge.all
     @weeks = Week.all
-    @week = Week.find(params[:id])
+    @week = Week.first
+    if current_user
+      current_user
+      user1_submittles
+    end
+    if current_user_2
+      current_user_2
+      user2_submittles
+    end
   end
 
   private
