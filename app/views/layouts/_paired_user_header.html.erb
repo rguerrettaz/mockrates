@@ -1,8 +1,8 @@
 
     <li><%= link_to "Challenges", challenges_path %></li>
+    <li><a href="sql_designer" target="_blank">SQL-Designer</a></li>
     <% if current_user_2.admin? || current_user.admin? %>
     <li><%= link_to "Create Challenge", new_challenge_path %></li>
-    <li><a href="sql_designer" target="_blank">SQL-Designer</a></li>
     <% end %>
 
     <li id="fat-menu" class="dropdown">
@@ -18,4 +18,3 @@
       <li class="name"><%= current_user_2.username %></li>
     <li><%= link_to "Log out", session_path(current_user_2), :method => :delete %></li>
     </ul>
-  </li>
