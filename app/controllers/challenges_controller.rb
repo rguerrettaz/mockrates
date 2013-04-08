@@ -33,6 +33,8 @@ class ChallengesController < ApplicationController
 
   def index
     @challenges = Challenge.all
+    @weeks = Week.all
+    @week = Week.first
   end
 
   
