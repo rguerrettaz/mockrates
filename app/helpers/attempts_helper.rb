@@ -11,4 +11,9 @@ module AttemptsHelper
   def get_github(attempt)
     attempt.class == Attempt ? (link_to ": #{attempt.github_url}", attempt.github_url) : nil
   end
+
+  def everything
+  	everything = Attempt.all + InteractiveAttempt.all + Post.all + Question.all
+    everything.sort_by { |e| e.created_at }.reverse
+  end
 end

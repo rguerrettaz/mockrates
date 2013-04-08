@@ -1,0 +1,52 @@
+
+
+.tab {
+    display: none;
+}
+.tabs {
+    float: left;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 16px;
+    margin-left: 0;
+    width: 550px;
+}
+.tabs li {
+    float: left;
+    margin-right: 16px;
+    padding: 10px 15px;
+    height: 30px;
+    line-height: 30px;
+    list-style-type: none;
+
+}
+.tabs li a {
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+/*
+  To get the "tab" effect, we have to cover up the grey border of the ul element
+  To do this, we make the list item one pixel taller, give it a negative 1px bottom margin,
+  and give it a 1px white bottom border.  This keeps the list item the same overall height,
+  but "nudges" it down 1px so its white border covers the ul's grey border
+
+  We also have to juggle with the margin to compensate for the new borders on the top, left, and right.
+*/
+
+.tabs li.active {
+    border: 1px solid #ccc;
+    border-bottom: 1px solid white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-bottom: -1px;
+    height: 31px;
+    padding: 9px 14px;
+}
+
+.tabs li.active a {
+    color: black;
+    text-decoration: none;
+    border-bottom: none;
+}

@@ -1,0 +1,4 @@
+<h4>Post</h4>
+        <p><%= attempt.content %></p>
+        <%= image_tag gravatar_for(User.find(attempt.user_id), size: 50), class: "gravatar" %>
+        <span class="time"><%= time_ago_in_words(attempt.created_at) %> ago</span>

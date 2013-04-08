@@ -29,14 +29,19 @@ h3.quote {
 .feed{
   float: left;
   width: 50%;
+  padding-top: 0;
 }
 
 div.attempt {
   width: 550px;
-  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
   padding: 20px 0 0 0;
   vertical-align: middle;
   margin-bottom: 0px;
+}
+
+div.attempt img{
+  padding-top: 20px;
 }
 
 
@@ -99,4 +104,11 @@ div.user textarea {
 li.dropdown{
   position: relative;
   left: 400px;
+}
+
+
+span.time {
+  color: #999;
+  float: right;
+  margin-right: 100px;
 }

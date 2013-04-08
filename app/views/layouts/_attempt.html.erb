@@ -1,0 +1,4 @@
+<h4>CodeReview</h4>
+  <p>I just submitted an attempt for <%= link_to get_challenge(attempt).title, get_challenge(attempt)%><%= get_github(attempt) %> </p>
+ <%= image_tag gravatar_for(User.find(attempt.user_id), size: 50), class: "gravatar" %>
+ <span class="time"><%= time_ago_in_words(attempt.created_at) %> ago</span>
