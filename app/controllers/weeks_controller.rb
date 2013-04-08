@@ -17,10 +17,4 @@ class WeeksController < ApplicationController
       user2_submittles
     end
   end
-
-  private
-
- 
-
-
 end
