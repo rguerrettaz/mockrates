@@ -1,0 +1,19 @@
+<div class="span9">
+  <h1><%= @week.name %></h1>
+  <table class="table table-striped">
+    <tr>
+      <td></td>
+      <td>Challenge</td>
+      <td>Pre-reqs</td>
+      <td>Submitted?</td>
+    </tr>
+    <% @week.challenges.each do |c| %>
+      <tr>
+        <td></td>
+        <td><%= link_to c.title, challenge_path(c) %></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

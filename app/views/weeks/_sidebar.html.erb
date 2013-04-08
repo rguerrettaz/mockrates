@@ -1,0 +1,32 @@
+<div class="span3">
+  <div id="unit_menu">
+    <div class="well well-small">
+      <ul class="nav nav-list">
+        <li class="nav-header" style="text-align: center">
+          Phase/Weeks
+        </li>
+        <li class="divider"></li>
+        <li class="nav-header">
+          Phase 1 Yo!
+        </li>
+        <% @weeks[0..2].each do |w| %>
+        <li><%= link_to w.name, w %></li>
+        <% end %>
+        <li class="divider"></li>
+        <li class="nav-header">
+          Phase 2 Foo!
+        </li>
+        <% @weeks[3..5].each do |w| %>
+        <li><%= link_to w.name, w %></li>
+        <% end %>
+        <li class="divider"></li>
+        <li class="nav-header">
+          Phase 3? OMG!!
+        </li>
+        <% @weeks[6..8].each do |w| %>
+        <li><%= link_to w.name, w %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
