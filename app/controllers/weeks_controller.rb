@@ -7,7 +7,7 @@ class WeeksController < ApplicationController
   def show
     @challenges = Challenge.all
     @weeks = Week.all
-    @week = Week.first
+    @week = Week.find(params[:id])
     if current_user
       current_user
       user1_submittles
