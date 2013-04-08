@@ -3,7 +3,7 @@
         <div class="container">
           <%= link_to "Mockrates", '/', id: "logo" %>
           <nav>
-            <ul class="nav pull-right">
+            <ul class="nav">
               <% if pair_users? %>
                 <%= render 'layouts/paired_user_header' %>
               <% elsif active_user %>
