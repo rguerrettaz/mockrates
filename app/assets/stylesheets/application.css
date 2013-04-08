@@ -13,6 +13,7 @@
  */
 @import "bootstrap";
 
+
 h3.quote {
   float: right;
   font-weight: normal;
@@ -92,3 +93,8 @@ div.user textarea {
   background-color: grey;
   color: white;
  }
+
+li.dropdown{
+  position: relative;
+  left: 400px;
+}
