@@ -1,7 +1,7 @@
 <%= form_for @attempt, :remote => true do |f| %>
-  <%= f.label :github_url, "You gist" %>
-  <%= f.text_field :github_url, :value => @attempt.github_url %>
-  <%= f.submit "Submit Challenge" %>
+  <%= f.submit "Submit Challenge", class: "btn btn-primary" %>
+  <span class="well well-small"><a href="<%= @attempt.github_url%>">Edit this gist</a></span>
+  <%= f.text_field :github_url, :value => @attempt.github_url, class: "challenge_form" %>
 <% end %>
 
 
