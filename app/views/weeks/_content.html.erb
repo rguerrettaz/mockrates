@@ -1,18 +1,36 @@
 <div class="span9">
   <h1><%= @week.name %></h1>
+  <h2 style="text-align:center">Monday</h2>
   <table class="table table-striped">
-    <tr>
-      <td></td>
-      <td>Challenge</td>
-      <td>Pre-reqs</td>
-      <td>Submitted?</td>
-    </tr>
-    <% @week.challenges.each do |c| %>
+    <thead> 
       <tr>
+        <th></th>
+        <th>Challenge</th>
+        <th>Pre-reqs</th>
+        <th>Submitted?</th>
+      </tr>
+    </thead>
+    <% @week.challenges.each do |challenge| %>
+      <tr>
+        <td>
+          <span class="label label-important">core</span>
+        </td>
+        <td><%= link_to challenge.title, challenge_path(challenge) %></td>
         <td></td>
-        <td><%= link_to c.title, challenge_path(c) %></td>
-        <td></td>
-        <td></td>
+        <td>
+          <ul class="gravitars" style="list-style:none">
+          <% if @current_user %>
+            <% if @user1_submitted.include?(challenge.id) %>
+            <li ><img src="<%= gravatar_for(@current_user, size: 20) %>"></li>
+            <% end %>
+          <% end %>
+          <% if @current_user_2 %>
+            <% if @user2_submitted.include?(challenge.id) %>
+            <li ><img src="<%= gravatar_for(@current_user_2, size: 20) %>"></li>
+            <% end %>
+          <% end %>
+        </ul>
+        </td>
       </tr>
     <% end %>
   </table>
