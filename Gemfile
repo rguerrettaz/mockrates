@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 ruby "1.9.3"
 gem 'rails', '3.2.13'
 
-gem 'thin'
+# gem 'thin'
 gem 'bootstrap-sass'
 gem 'dynamic_form'
 gem 'markup'
