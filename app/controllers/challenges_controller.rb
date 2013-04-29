@@ -1,8 +1,10 @@
+require 'interactive_ruby/interactive'
+
 class ChallengesController < ApplicationController
   before_filter :signed_in_user, only: [:show, :index]
   before_filter :admin_user, only: [:new]
   include Interactive
-  
+
   def new
     @challenge = Challenge.new
     @phases = Phase.all
@@ -16,6 +18,7 @@ class ChallengesController < ApplicationController
                                interactive: params[:challenge][:interactive],
                                week_id: week.id,
                                phase_id: week.phase_id)
+    @challenge.week = week
     if @challenge.save
     create_specs(params[:challenge][:specs_attributes]["0"][:content], @challenge.id) if params[:challenge][:specs_attributes]["0"][:content]
     redirect_to challenges_path
@@ -45,7 +48,7 @@ class ChallengesController < ApplicationController
     end
   end
 
-  
+
   def destroy
   end
 

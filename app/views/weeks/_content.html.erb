@@ -24,7 +24,7 @@
             <li ><img src="<%= gravatar_for(@current_user, size: 20) %>"></li>
             <% end %>
           <% end %>
-          <% if @current_user_2 %>
+          <% if current_user_2 %>
             <% if @user2_submitted.include?(challenge.id) %>
             <li ><img src="<%= gravatar_for(@current_user_2, size: 20) %>"></li>
             <% end %>

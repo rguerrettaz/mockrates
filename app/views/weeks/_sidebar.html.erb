@@ -10,21 +10,21 @@
           Phase 1 Yo!
         </li>
         <% @weeks[0..2].each do |w| %>
-        <li><%= link_to w.name, w %></li>
+        <li><%= link_to w.name, w, class: "week-view", remote: true %></li>
         <% end %>
         <li class="divider"></li>
         <li class="nav-header">
           Phase 2 Foo!
         </li>
         <% @weeks[3..5].each do |w| %>
-        <li><%= link_to w.name, w %></li>
+        <li><%= link_to w.name, w,  class: "week-view", remote: true %></li>
         <% end %>
         <li class="divider"></li>
         <li class="nav-header">
           Phase 3? OMG!!
         </li>
         <% @weeks[6..8].each do |w| %>
-        <li><%= link_to w.name, w %></li>
+        <li><%= link_to w.name, w,  class: "week-view", remote: true %></li>
         <% end %>
       </ul>
     </div>
