@@ -1,81 +1,64 @@
 <div class="container">
-<% unless @user.oauth_token %>
-<%= render "github_modal" %>
-<% end %>
+  <% unless @user.oauth_token %>
+    <%= render "github_modal" %>
+  <% end %>
 
-<div class="user">
-  <h2>Activity Feed</h2>
-  <%= image_tag gravatar_for(@user), size: 40 %>
-  <textarea placeholder="What do you want your fellow boots to know?" cols="100" rows="2"></textarea>
-  <button class="btn btn-primary">Post</button>
-</div>
-  
+  <div class="user">
+    <h2>Activity Feed</h2>
+    <%= image_tag gravatar_for(@user), size: 40 %>
+    <textarea placeholder="What do you want your fellow boots to know?" cols="100" rows="2"></textarea>
+    <button class="btn btn-primary">Post</button>
+  </div>
 
-<h3 class="quote">"Programming is not about what you know.<br/>
-It's about what you can google." <br/>
-~ Mockrates</h3>
-<section class="feed">
-<section class="tabbed">
-    <ul class="tabs">
+  <h3 class="quote">"Programming is not about what you know.<br/>
+  It's about what you can google." <br/>
+  ~ Mockrates</h3>
+  <section class="feed">
+    <section class="tabbed">
+      <ul class="tabs">
         <li class="active"><a href="#tab1">All</a></li>
         <li><a href="#tab2">Post</a></li>
         <li><a href="#tab3">Question</a></li>
         <li><a href="#tab4">Code Review</a></li>
-    </ul>
+      </ul>
 
-    <div class="tab" id="tab1">
+      <div class="tab" id="tab1">
+        <% everything.each do |e| %>
+          <div class="attempt">
+            <% if e.class == Attempt || e.class ==  InteractiveAttempt %>
+             <%= render 'layouts/attempt', attempt: e %>
+            <% elsif e.class == Question %>
+             <%= render 'layouts/question', attempt: e %>
+            <% else%>
+             <%= render 'layouts/post', attempt: e %>
+            <% end %>
+          </div>
+      <% end %>
+      </div>
 
-     <% everything.each do |e| %>
-       <div class="attempt">
-         <% if e.class == Attempt || e.class ==  InteractiveAttempt %>
-           <%= render 'layouts/attempt', attempt: e %>
-        <% elsif e.class == Question %>
-           <%= render 'layouts/question', attempt: e %>
-        <% else%>
-           <%= render 'layouts/post', attempt: e %>
+      <div class="tab" id="tab2">
+        <% questions.each do |attempt| %>
+        <div class="attempt">
+          <%= render 'layouts/question', attempt: attempt %>
+        </div>
         <% end %>
-       </div>
-    <% end %>
-    </div>
-    
-    <div class="tab" id="tab2">
-
-      <% questions.each do |attempt| %>
-      <div class="attempt">
-        <%= render 'layouts/question', attempt: attempt %>
       </div>
-      <% end %>
-      
-    </div>
-    
-    <div class="tab" id="tab3">
 
-       <% posts.each do |attempt| %>
-      <div class="attempt">
-        <%= render 'layouts/post', attempt: attempt %>
+      <div class="tab" id="tab3">
+        <% posts.each do |attempt| %>
+          <div class="attempt">
+            <%= render 'layouts/post', attempt: attempt %>
+          </div>
+        <% end %>
       </div>
-      <% end %>
-        
-    </div>
 
-    <div class="tab" id="tab4">
-
-       <% all_attempts.each do |attempt| %>
-      <div class="attempt">
-        <%= render 'layouts/attempt', attempt: attempt %>
+      <div class="tab" id="tab4">
+        <% all_attempts.each do |attempt| %>
+          <div class="attempt">
+            <%= render 'layouts/attempt', attempt: attempt %>
+          </div>
+        <% end %>
       </div>
-      <% end %>
-        
-    </div>
-</section>
-
-
- 
-</section>
-
-
-
-
+    </section>
+  </section>
 </div>
-
-

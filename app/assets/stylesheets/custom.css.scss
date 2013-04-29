@@ -1,7 +1,7 @@
-
 body {
   padding-top: 80px;
 }
+
 h3.quote {
   float: right;
   font-weight: normal;
@@ -9,10 +9,9 @@ h3.quote {
   font-size: 1.4em;
   position: relative;
   bottom: 180px;
-
 }
 
-.feed{
+.feed {
   float: left;
   width: 50%;
   padding-top: 0;
@@ -26,11 +25,9 @@ div.attempt {
   margin-bottom: 0px;
 }
 
-div.attempt img{
+div.attempt img {
   padding-top: 20px;
 }
-
-
 
 div.attempt h4, div.attempt p {
     margin-left: 100px;
@@ -45,7 +42,6 @@ div.user {
   margin: 0 0 50px 0;
   width: 550px;
   padding-top: 30px;
-
 }
 
 div.user h2 {
@@ -55,12 +51,11 @@ div.user h2 {
 div.user img {
   padding-right: 50px;
 }
- button {
+
+button {
   display: block;
   float:right;
   position: relative;
-  /*top: 90px;*/
-  /*right: 100px;*/
 }
 
 div.user textarea {
@@ -81,17 +76,17 @@ div.user textarea {
   color: #fff;
   text-decoration: none;
 }
- ul li.name {
+
+ul li.name {
   padding-left: 20px;
-  background-color: grey;
+  background-color: gray;
   color: white;
- }
+}
 
 li.dropdown{
   position: relative;
   left: 400px;
 }
-
 
 span.time {
   color: #999;
