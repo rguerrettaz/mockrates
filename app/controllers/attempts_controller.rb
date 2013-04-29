@@ -1,6 +1,3 @@
-
-
-
 class AttemptsController < ApplicationController
 
   def create
@@ -10,13 +7,13 @@ class AttemptsController < ApplicationController
     if current_user
       @attempt = Attempt.new(challenge_id: params[:id], user_id: current_user.id)
       @attempt.github_url = gist.html_url
-      @attempt.save     
+      @attempt.save
     end
     if current_user_2
       @attempt2 = Attempt.new(challenge_id: params[:id], user_id: current_user_2.id)
       @attempt2.github_url = gist.html_url
       @attempt2.save
-    end   
+    end
   end
 
   def update

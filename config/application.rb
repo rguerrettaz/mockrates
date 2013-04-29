@@ -15,14 +15,20 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Mockrates  
+module Mockrates
 
   class Application < Rails::Application
     APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
-    if Rails.env.development? || Rails.env.test? 
-      github_data = YAML.load_file(APP_ROOT.join('config', 'github.yml'))
-      ENV['GITHUB_KEY'] = github_data['github_key']
-      ENV['GITHUB_SECRET'] = github_data['github_secret']
+
+    Github.configure do |config|
+        if Rails.env.development? || Rails.env.test?
+          github_data = YAML.load_file(APP_ROOT.join('config', 'github.yml'))
+          ENV['GITHUB_KEY'] = github_data['github_key']
+          ENV['GITHUB_SECRET'] = github_data['github_secret']
+        end
+
+        config.consumer_key = ENV['GITHUB_KEY']
+        config.consumer_secret = ENV['GITHUB_SECRET']
     end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
