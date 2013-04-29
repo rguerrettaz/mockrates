@@ -15,6 +15,10 @@ gem 'rubycop'
 gem 'jquery-rails'
 gem 'bcrypt-ruby'
 
+# This is out of development and tests group because of
+# dependency in Interactive module
+gem 'rspec-rails'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -27,6 +31,5 @@ group :development, :test do
   gem 'spork'
   gem 'guard-ruby'
   gem 'factory_girl_rails'
-  gem 'rspec-rails'
   gem 'debugger'
 end

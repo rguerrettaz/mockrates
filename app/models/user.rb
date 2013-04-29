@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password_digest, :username, :password, :cohort_id
+  attr_accessible :email, :password_digest, :username, :password, :cohort_id, :admin #made accessible to test the app
   has_secure_password
-  belongs_to :cohort  
+  belongs_to :cohort
   has_many :attempts
   has_many :challenges, :through => :attempts
   has_many :interactive_attempts
@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   before_create :downcase_email
   validates :username, :presence => true, :uniqueness => true
   validates :email, :presence => true, :uniqueness => true, :format => { :with => EMAIL_REGEX}
-  validates :password, :presence => true 
+  validates :password, :presence => true
 
   private
 
