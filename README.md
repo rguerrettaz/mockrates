@@ -1,7 +1,9 @@
 Mockrates
 ============
 
-This is a clone of the Dev Bootcamp Socrates program as completed with 2 other students at Dev Bootcamp in week 6. It is still in development.
+This is a clone of the Dev Bootcamp Socrates system. It was completed with 2 other students at Dev Bootcamp in week 6.
+
+PLEASE NOTE: the app is still in development.
 
 History
 ------------------
@@ -28,15 +30,20 @@ Directions for testing
   - pass: admin1234
 - Click the create a challenge in navbar. Now create a challenge using markdown
 - Create another challenge. This time create it using the interactive feature. To do so follow these directions:
- - **insert more here**
-- Click on Challenges in navbar. Click start a challenge. Click submit a challenge. Now navigate back to the Challenges tab and you will see your gravitar in the Submitted? column
-- Login another user 
+ - paste the following into the content box ``` For this exercise you will need to create a method in ruby called "add" which takes to integers as arguments and returns the sum of the two integers```
+ - After you click the interactive checkbox paste this test into the text box ```add(5, 7) == 12```
+ - The above is a test, if the user writes the method correctly the test will pass, if not an error message is shown
+ - If you follow the next step you can see this in action
+- To complete a challenge click the "Challenges" tab in navbar. From this page choose a challenge. Once on challenge page click start challenge. Click submit challenge. Now navigate back to the Challenges tab and you will see your gravitar in the "Submitted?" column. Pretty cool right!???...
+- Now lets test the dual login
+- Login another user with the below creds:
   - email: jameshamilton@gmail.com
   - pass: dbc
-- Now that 2 are logged in, navigate to challenge and start/submit the challenge. Once navigating back to the challenges page you will gravitars for both users show up next to the challenge
-- click on sql designer and play around a bit with "add table" and "add field". For full experience, click the 'Save / Load' button and paste this xml code on this page: https://gist.github.com/rguerrettaz/c52e1e49d005ad18bdfd into the left box and click "Load XML"
+- Now that 2 are logged in, navigate to a new challenge and start/submit the challenge. Navigate back to challenges page. You should now see the gravitars for both users showing up in the "Submitted?" column
+- Now this one is pretty fun. Let's test the SQL designer. First click on the sql designer tab in the navbar. Once navigated to the page you can play around a bit with "add table" and "add field". 
+ - For the full experience, copy the code from this gist: https://gist.github.com/rguerrettaz/c52e1e49d005ad18bdfd.  Now click the 'Save / Load' button from SQL Designer. A box will popup. Paste the xml you just copied into the left box and click "Load XML"... If everything worked properly you should see a schema which you can now play with. 
 
-NOTE: The ux may not be intuitive to an outside user because the socrates system is designed to be used by boots and instructors, who get on-boarded and such. 
+NOTE: The ux may not be intuitive to an outsider because of the nature of the Dev Bootcamp Socrates system. The system is designed to be used by boots and instructors, who get on-boarded. 
 
-As stated this is a WIP 
-List of current issues here: https://docs.google.com/spreadsheet/ccc?key=0AsTAOdugtWrHdE01RkxYcFZoQ09jN0d0VU15c29ZN1E#gid=0
+As stated this is still a WIP. The list of current issues is here: 
+https://docs.google.com/spreadsheet/ccc?key=0AsTAOdugtWrHdE01RkxYcFZoQ09jN0d0VU15c29ZN1E#gid=0
