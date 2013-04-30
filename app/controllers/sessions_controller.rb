@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_filter :login_required, :except => [:new, :create]
+  skip_before_filter :login_required, only: [:new, :create]
   def new
     render :new, :layout => false
   end

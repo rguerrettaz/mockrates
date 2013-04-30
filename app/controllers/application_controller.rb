@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :login_required
-  
+
   def sign_in(user)
     if cookies[:id]
       cookies[:id_2] = user.id
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   def pair_users?
     current_user_2 && current_user
   end
-  
+
   def current_user_2
     @current_user_2 ||= User.find(cookies[:id_2]) if cookies[:id_2]
   end
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   def admin_user
     if current_user_2
-      unless current_user_2.admin 
+      unless current_user_2.admin
         redirect_to current_user_2
       end
     elsif current_user
@@ -49,7 +49,6 @@ class ApplicationController < ActionController::Base
     p cookies[:id]
     p cookies[:id_2]
     unless cookies[:id] || cookies[:id_2]
-      flash[:notice] = "Must be logged in to access that page"
       redirect_to login_path
     end
   end
@@ -62,9 +61,9 @@ class ApplicationController < ActionController::Base
     @active_user = current_user || current_user_2
   end
 
-  def user1_submittles  
+  def user1_submittles
     @user1_submitted = []
-    current_user.attempts.each do |attempt| 
+    current_user.attempts.each do |attempt|
       @user1_submitted << attempt.challenge_id
     end
     @user1_submitted
@@ -72,7 +71,7 @@ class ApplicationController < ActionController::Base
 
   def user2_submittles
     @user2_submitted = []
-    current_user_2.attempts.each do |attempt| 
+    current_user_2.attempts.each do |attempt|
       @user2_submitted << attempt.challenge_id
     end
     @user2_submitted
