@@ -12,4 +12,12 @@ module ApplicationHelper
     def questions
     	@questions = Question.all
     end
+
+    def get_challenge_path(challenge)
+      if challenge.interactive?
+        "/challenges/#{challenge.id}/interactive"
+      else
+        "/challenges/#{challenge.id}"
+      end
+    end
 end

@@ -1,11 +1,11 @@
-<h1><%= @challenge.title%></h1>
-<p><%= @challenge.content%></p>
+<div class="container">
+  <h1><%= @challenge.title%></h1>
+  <p><%= @challenge.content%></p>
 
-<%= form_tag("/challenges/#{@challenge.id}/interactive", method: "get", remote: true) do %>
-  <%= hidden_field_tag(:challenge_id, @challenge.id) %>
-  <%= text_area_tag(:code) %>
-  <%= submit_tag("submit code") %>
-<% end %>
-<p class="code"></p>
-
-
+  <%= form_tag("/challenges/#{@challenge.id}/interactive", method: "get", remote: true, class: "interactive") do %>
+    <%= hidden_field_tag :challenge_id, @challenge.id %>
+    <%= text_area_tag :code %><br>
+    <%= submit_tag "submit code", class: "btn btn-primary" %>
+  <% end %>
+  <p class="code"></p>
+</div>

@@ -1,21 +1,24 @@
-<%= form_for @challenge do |f| %>
+<div class="container">
 
-<%=  f.error_messages %>
-<%= f.label :title %>
-<%=  f.text_field :title %>
-<%=  f.label :content %>
-<%=  f.text_area :content %>
-<%= f.label :week_id, "Week" %>
-<%=  f.collection_select :week_id, Week.all , :id, :name %>
-<%= f.label :interactive %>
-<%= f.check_box :interactive, class: "interactive" %> <br/>
-  
-  <div class="spec">
-    <%= f.fields_for :specs, @challenge.specs.build do |builder| %>
-    <p>Each test on its own line</p>
-      <%= builder.label :content, "SPECS" %>
-      <%= builder.text_area :content %>
-    <% end %>
-  </div>
-<%=  f.submit "Create Challenge!" %>
-<% end %>
+  <%= form_for @challenge do |f| %>
+    <%=  f.error_messages %>
+    <%= f.label :title %>
+    <%=  f.text_field :title %>
+    <%=  f.label :content %>
+    <%=  f.text_area :content, placeholder: "You can use markdown in here..." %>
+    <%= f.label :week_id, "Week" %>
+    <%=  f.collection_select :week_id, Week.all , :id, :name %>
+    <%= f.label :interactive %>
+    <%= f.check_box :interactive, class: "interactive" %> <br/>
+
+    <div class="spec">
+      <%= f.fields_for :specs, @challenge.specs.build do |builder| %>
+        <p>Each test on its own line</p>
+        <%= builder.label :content, "SPECS" %>
+        <%= builder.text_area :content, placeholder: "add tests in here like: sum(3,4) == 7" %>
+      <% end %>
+    </div>
+    <%=  f.submit "Create Challenge!" %>
+  <% end %>
+
+</div>
