@@ -14,6 +14,7 @@ gem 'pg'
 gem 'rubycop'
 gem 'jquery-rails'
 gem 'bcrypt-ruby'
+gem 'newrelic_rpm'
 
 # This is out of development and tests group because of
 # dependency in Interactive module
