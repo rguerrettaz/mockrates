@@ -2,7 +2,7 @@
   <h1><%= @week.name %></h1>
   <h2 style="text-align:center">Monday</h2>
   <table class="table table-striped">
-    <thead> 
+    <thead>
       <tr>
         <th></th>
         <th>Challenge</th>
@@ -15,18 +15,18 @@
         <td>
           <span class="label label-important">core</span>
         </td>
-        <td><%= link_to challenge.title, challenge_path(challenge) %></td>
+        <td><%= link_to challenge.title, get_challenge_path(challenge) %></td>
         <td></td>
         <td>
           <ul class="gravitars" style="list-style:none">
           <% if @current_user %>
             <% if @user1_submitted.include?(challenge.id) %>
-            <li ><img src="<%= gravatar_for(@current_user, size: 20) %>"></li>
+            <li ><img src="<%= gravatar_for(@current_user, size: 28) %>"></li>
             <% end %>
           <% end %>
           <% if current_user_2 %>
             <% if @user2_submitted.include?(challenge.id) %>
-            <li ><img src="<%= gravatar_for(@current_user_2, size: 20) %>"></li>
+            <li ><img src="<%= gravatar_for(@current_user_2, size: 28) %>"></li>
             <% end %>
           <% end %>
         </ul>
