@@ -5,24 +5,6 @@ This is a clone of the Dev Bootcamp Socrates system. It was completed with 2 oth
 
 PLEASE NOTE: the app is still in development.
 
-History
-------------------
-
-- Built in 3 days by 3 developers
-- Still a WIP (currently seeding db, cleaning up ux/ui a bit, and squashing bugs)
-- Is a clone of the dev bootcamp socrates system: http://socrates.devbootcamp.com/login
-- features include:
-  * Dual login (for paired programming)
-  - Dual submittal of challenges 
-  - SQL Designer integration (interactive visual schema designer)
-  - Create challenges using markdown (only if you're an admin )
-  - Github oauth integration
-  - Github Gist creation when challenge started
-  - interactive challenges (like codeschool  or codecademy) - these let you know if you got the problem right or wrong.
-  - etc. 
-
-
-
 Directions for testing
 ---------------------
 - login using these creds: 
@@ -44,6 +26,25 @@ Directions for testing
  - For the full experience, copy the code from this gist: https://gist.github.com/rguerrettaz/c52e1e49d005ad18bdfd.  Now click the 'Save / Load' button from SQL Designer. A box will popup. Paste the xml you just copied into the left box and click "Load XML"... If everything worked properly you should see a schema which you can now play with. 
 
 NOTE: The ux may not be intuitive to an outsider because of the nature of the Dev Bootcamp Socrates system. The system is designed to be used by boots and instructors, who get on-boarded. 
+
+History
+------------------
+
+- Built in 3 days by 3 developers
+- Still a WIP (currently seeding db, cleaning up ux/ui a bit, and squashing bugs)
+- Is a clone of the dev bootcamp socrates system: http://socrates.devbootcamp.com/login
+- features include:
+  * Dual login (for paired programming)
+  - Dual submittal of challenges 
+  - SQL Designer integration (interactive visual schema designer)
+  - Create challenges using markdown (only if you're an admin )
+  - Github oauth integration
+  - Github Gist creation when challenge started
+  - interactive challenges (like codeschool  or codecademy) - these let you know if you got the problem right or wrong.
+  - etc. 
+
+
+
 
 As stated this is still a WIP. The list of current issues is here: 
 https://docs.google.com/spreadsheet/ccc?key=0AsTAOdugtWrHdE01RkxYcFZoQ09jN0d0VU15c29ZN1E#gid=0
